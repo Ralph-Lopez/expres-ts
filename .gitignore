@@ -1,0 +1,17 @@
+# IDE
+/.vscode
+
+# Node
+/node_modules
+package-lock.json
+.nvmrc
+.env
+
+# Newrelic
+newrelic_agent.log
+
+# Sequelize
+_current_bak.json
+
+# Misc
+.DS_Store
