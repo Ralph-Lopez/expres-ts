@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import config from "../config";
+import config from "./config";
 import cors from "cors";
 import bodyParser from "body-parser";
 import debug from "debug";
