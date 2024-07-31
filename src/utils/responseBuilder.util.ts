@@ -1,4 +1,4 @@
-const dynamicResponse = async (isSuccess: boolean, message: string, data: object) => {
+const DynamicResponse = async (isSuccess: boolean, message: string, data: object) => {
     return {
         isSuccess,
         message,
@@ -6,7 +6,7 @@ const dynamicResponse = async (isSuccess: boolean, message: string, data: object
     };
 }
 
-const dbResponse = async (isSuccess: boolean, code: string, data: object) => {
+const DbResponse = async (isSuccess: boolean, code: string, data: object) => {
     //get db response by code
     const message = "";
     return {
@@ -17,6 +17,6 @@ const dbResponse = async (isSuccess: boolean, code: string, data: object) => {
 }
 
 export default {
-    dynamicResponse,
-    dbResponse
+    DynamicResponse,
+    DbResponse
 }

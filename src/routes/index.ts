@@ -10,16 +10,16 @@ router.use("/HealthCheck", healthCheckRoute);
 router.use("/test", testRoute);
 
 router.use(async (req: Request, res: Response) => {
-    return res.status(404).send(await resBuilder.dynamicResponse(false, "Not found.", {}));
+    return res.status(404).send(await resBuilder.DynamicResponse(false, "Not found.", {}));
 });
 
-router.use(async (err: ValidationError, req: Request, res: Response, next: NextFunction) => {
-    if (err) {
-        return res.status(err.statusCode).send(
-            await resBuilder.dynamicResponse(false, `${err.details.body?.map((detail: any) => detail.context.label)} is required.`, {}));
+router.use(async (errValidation: ValidationError, req: Request, res: Response, next: NextFunction) => {
+    if (errValidation) {
+        return res.status(errValidation.statusCode).send(
+            await resBuilder.DynamicResponse(false, `${errValidation.details.body?.map((detail: any) => detail.context.label)} is required.`, {}));
     }
 
-    return res.status(500).json(resBuilder.dynamicResponse(false, "Internal error occurred.", {}));
+    return res.status(500).json(resBuilder.DynamicResponse(false, "Internal error occurred.", {}));
 });
 
 export default router;

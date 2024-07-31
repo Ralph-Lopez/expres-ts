@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import db from "../dbConnection";
 
-const healthCheck = async (req: Request, res: Response) => {
+const HealthCheck = async (req: Request, res: Response) => {
     await db.conn.authenticate().then(() => {
         return res.status(200).send("Service is running.");
     }).catch(() => {
@@ -10,5 +10,5 @@ const healthCheck = async (req: Request, res: Response) => {
 }
 
 export default {
-    healthCheck
+    HealthCheck
 }
